@@ -1,0 +1,6 @@
+#MP4-ES stream: rtsp://195.200.199.8/mpeg4/media.amp
+if [[ $1 == "1" ]]; then
+	./client rtsp://admin:Sheena3549@192.168.1.6:554/Streaming/Channels/1
+else
+	./client rtsp://184.72.239.149/vod/mp4:BigBuckBunny_175k.mov
+fi
