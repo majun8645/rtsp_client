@@ -1,6 +1,4 @@
 #include "mediasink.h"
-#include "old_pix_fmts.h"
-#include "pixfmt.h"
 
 #include <H264VideoRTPSource.hh>
 
@@ -306,7 +304,7 @@ int StreamMediaSink::showFrame()
 {
 	int ret = SDL_LockYUVOverlay(m_bmp);
 
-#if 1
+#if 0
         AVPicture pict; // = { { 0 } };
 
         pict.data[0] = m_bmp->pixels[0];
@@ -340,8 +338,8 @@ int StreamMediaSink::showFrame()
 
 	m_rect.x = 0;
 	m_rect.y = 0;
-	m_rect.w = m_avFrame->width;
-	m_rect.h = m_avFrame->height;
+	m_rect.w = m_avFrame->width/2;
+	m_rect.h = m_avFrame->height/2;
 	ret = SDL_DisplayYUVOverlay(m_bmp, &m_rect);
 
 	return ret;
