@@ -1,0 +1,11 @@
+prefix=${pcfiledir}/../live
+libdir=${prefix}
+includedir=${prefix}
+
+Name: live555
+Description: multimedia RTSP streaming library
+Version: 2014.01.13
+Cflags: -I${includedir}/liveMedia/include -I${includedir}/groupsock/include \
+-I${includedir}/BasicUsageEnvironment/include -I${includedir}/UsageEnvironment/include
+Libs: -L${libdir}/liveMedia -L${libdir}/groupsock -L${libdir}/BasicUsageEnvironment \
+-L${libdir}/UsageEnvironment -lliveMedia -lgroupsock -lBasicUsageEnvironment -lUsageEnvironment
