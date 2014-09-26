@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+
+# Project specific
+client
+nbproject/private/Default-build.log
+nbproject/private/Default-exec.log
+
