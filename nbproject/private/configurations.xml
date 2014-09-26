@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <df root="../ffmpeg.git" name="1">
+    <df root="../ffmpeg.git" name="0">
       <df name="compat">
         <df name="aix">
           <in>math.h</in>
@@ -375,7 +375,6 @@
           <in>huffyuvencdsp_mmx.c</in>
           <in>idct_mmx_xvid.c</in>
           <in>idct_sse2_xvid.c</in>
-          <in>idct_xvid.h</in>
           <in>idctdsp.asm</in>
           <in>idctdsp.h</in>
           <in>idctdsp_init.c</in>
@@ -446,7 +445,10 @@
           <in>vp9lpf.asm</in>
           <in>vp9mc.asm</in>
           <in>w64xmmtest.c</in>
+          <in>xvididct.h</in>
           <in>xvididct_init.c</in>
+          <in>xvididct_mmx.c</in>
+          <in>xvididct_sse2.c</in>
         </df>
         <in>012v.c</in>
         <in>4xm.c</in>
@@ -480,6 +482,8 @@
         <in>aacpsy.c</in>
         <in>aacsbr.c</in>
         <in>aacsbr.h</in>
+        <in>aacsbr_tablegen.c</in>
+        <in>aacsbr_tablegen.h</in>
         <in>aacsbrdata.h</in>
         <in>aactab.c</in>
         <in>aactab.h</in>
@@ -609,6 +613,8 @@
         <in>cabac.c</in>
         <in>cabac.h</in>
         <in>cabac_functions.h</in>
+        <in>cabac_tablegen.c</in>
+        <in>cabac_tablegen.h</in>
         <in>cavs.c</in>
         <in>cavs.h</in>
         <in>cavs_parser.c</in>
@@ -689,7 +695,6 @@
         <in>dsddec.c</in>
         <in>dsicinaudio.c</in>
         <in>dsicinvideo.c</in>
-        <in>dsputil.h</in>
         <in>dsputil_compat.c</in>
         <in>dump_extradata_bsf.c</in>
         <in>dv.c</in>
@@ -1419,6 +1424,7 @@
         <in>vble.c</in>
         <in>vc1.c</in>
         <in>vc1.h</in>
+        <in>vc1_common.h</in>
         <in>vc1_parser.c</in>
         <in>vc1acdata.h</in>
         <in>vc1data.c</in>
@@ -1498,6 +1504,8 @@
         <in>wma.h</in>
         <in>wma_common.c</in>
         <in>wma_common.h</in>
+        <in>wma_freqs.c</in>
+        <in>wma_freqs.h</in>
         <in>wmadata.h</in>
         <in>wmadec.c</in>
         <in>wmaenc.c</in>
@@ -1638,6 +1646,8 @@
           <in>vf_gradfun_init.c</in>
           <in>vf_hqdn3d.asm</in>
           <in>vf_hqdn3d_init.c</in>
+          <in>vf_idet.asm</in>
+          <in>vf_idet_init.c</in>
           <in>vf_pullup.asm</in>
           <in>vf_pullup_init.c</in>
           <in>vf_spp.c</in>
@@ -1678,9 +1688,11 @@
         <in>af_replaygain.c</in>
         <in>af_resample.c</in>
         <in>af_silencedetect.c</in>
+        <in>af_silenceremove.c</in>
         <in>af_volume.c</in>
         <in>af_volume.h</in>
         <in>af_volumedetect.c</in>
+        <in>all_channel_layouts.inc</in>
         <in>allfilters.c</in>
         <in>asink_anullsink.c</in>
         <in>asrc_abuffer.h</in>
@@ -1762,6 +1774,7 @@
         <in>vf_blackframe.c</in>
         <in>vf_blend.c</in>
         <in>vf_boxblur.c</in>
+        <in>vf_codecview.c</in>
         <in>vf_colorbalance.c</in>
         <in>vf_colorchannelmixer.c</in>
         <in>vf_colormatrix.c</in>
@@ -1798,6 +1811,7 @@
         <in>vf_hqx.c</in>
         <in>vf_hue.c</in>
         <in>vf_idet.c</in>
+        <in>vf_idet.h</in>
         <in>vf_il.c</in>
         <in>vf_interlace.c</in>
         <in>vf_kerndeint.c</in>
@@ -2200,9 +2214,11 @@
         <in>rtpdec_asf.c</in>
         <in>rtpdec_formats.h</in>
         <in>rtpdec_g726.c</in>
+        <in>rtpdec_h261.c</in>
         <in>rtpdec_h263.c</in>
         <in>rtpdec_h263_rfc2190.c</in>
         <in>rtpdec_h264.c</in>
+        <in>rtpdec_hevc.c</in>
         <in>rtpdec_ilbc.c</in>
         <in>rtpdec_jpeg.c</in>
         <in>rtpdec_latm.c</in>
@@ -2221,6 +2237,7 @@
         <in>rtpenc_amr.c</in>
         <in>rtpenc_chain.c</in>
         <in>rtpenc_chain.h</in>
+        <in>rtpenc_h261.c</in>
         <in>rtpenc_h263.c</in>
         <in>rtpenc_h263_rfc2190.c</in>
         <in>rtpenc_h264.c</in>
@@ -2620,6 +2637,11 @@
         <in>version.h</in>
       </df>
       <df name="libswresample">
+        <df name="aarch64">
+          <in>audio_convert_init.c</in>
+          <in>audio_convert_neon.S</in>
+          <in>neontest.c</in>
+        </df>
         <df name="arm">
           <in>audio_convert_init.c</in>
           <in>audio_convert_neon.S</in>
@@ -2770,7 +2792,7 @@
       <in>ffprobe.c</in>
       <in>ffserver.c</in>
     </df>
-    <df root="../live" name="2">
+    <df root="../live" name="1">
       <df name="BasicUsageEnvironment">
         <df name="include">
           <in>BasicHashTable.hh</in>
@@ -3148,6 +3170,16 @@
         <in>live555ProxyServer.cpp</in>
       </df>
       <df name="testProgs">
+        <df name="nik">
+          <in>client.cpp</in>
+          <in>client.h</in>
+          <in>main.cpp</in>
+          <in>mediasink.cpp</in>
+          <in>mediasink.h</in>
+          <in>streamclientstate.cpp</in>
+          <in>streamclientstate.h</in>
+          <in>tutorial02.c</in>
+        </df>
         <in>MPEG2TransportStreamIndexer.cpp</in>
         <in>openRTSP.cpp</in>
         <in>playCommon.cpp</in>
@@ -3155,6 +3187,7 @@
         <in>playSIP.cpp</in>
         <in>registerRTSPStream.cpp</in>
         <in>sapWatch.cpp</in>
+        <in>streamclientstate.h</in>
         <in>testAMRAudioStreamer.cpp</in>
         <in>testDVVideoStreamer.cpp</in>
         <in>testGSMStreamer.cpp</in>
@@ -3204,7 +3237,7 @@
         <in>showAudioInputPorts.cpp</in>
       </df>
     </df>
-    <df root="." name="0">
+    <df root="." name="2">
       <df name="examples">
         <in>tutorial02.c</in>
       </df>
@@ -3242,6 +3275,8 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
         <gdb_options>
           <DebugOptions>
             <option name="debug_command"
