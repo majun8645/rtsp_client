@@ -6,13 +6,13 @@ LIVE_MEDIA_PKG_CONFIG_PRE_OPTIONS = PKG_CONFIG_PATH=.
 #COMPILE_OPTS = -g -m64  -fPIC -I. -O2 -DSOCKLEN_T=socklen_t -D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64 
 COMPILE_OPTS = -g -m64  -fPIC -I. -DSOCKLEN_T=socklen_t -D_LARGEFILE_SOURCE=1 -D_FILE_OFFSET_BITS=64 
 C_FLAGS = $(COMPILE_OPTS)
-C_FLAGS += $(shell $(FFMPEG_PKG_CONFIG_PRE_OPTIONS)  pkg-config --cflags libavcodec)
+C_FLAGS += $(shell $(FFMPEG_PKG_CONFIG_PRE_OPTIONS)  pkg-config --cflags libswscale libavcodec)
 C_FLAGS += $(shell $(LIVE_MEDIA_PKG_CONFIG_PRE_OPTIONS) pkg-config --cflags live555)
 
 C_FLAGS += $(shell sdl-config --cflags)
 CXX_FLAGS = $(C_FLAGS) -Wall -DBSD=1
 
-FFMPEG_LIBS = $(shell $(FFMPEG_PKG_CONFIG_PRE_OPTIONS) pkg-config --libs-only-L libavcodec)
+FFMPEG_LIBS = $(shell $(FFMPEG_PKG_CONFIG_PRE_OPTIONS) pkg-config --libs-only-L libswscale libavcodec)
 #FFMPEG_LIBS += $(shell $(FFMPEG_PKG_CONFIG_PRE_OPTIONS) pkg-config --libs-only-l libavcodec) 
 FFMPEG_LIBS += -lavcodec -lswresample -lavutil -lswscale
 LIVE_MEDIA_LIBS = $(shell $(LIVE_MEDIA_PKG_CONFIG_PRE_OPTIONS) pkg-config --libs-only-L live555)
