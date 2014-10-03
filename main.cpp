@@ -330,6 +330,7 @@ void shutdownStream(RTSPClient* rtspClient, int exitCode)
   }
 }
 
+extern "C"
 int main(int argc, char** argv)
 {
   avcodec_register_all();
