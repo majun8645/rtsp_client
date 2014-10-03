@@ -1,0 +1,18 @@
+# - Config file for the RtspClient package
+# It defines the following variables
+#  RTSP_CLIENT_INCLUDE_DIRS - include directories for RtspClient
+#  RTSP_CLIENT_LIBRARIES    - libraries to link against
+#  RTSP_CLIENT_EXECUTABLE   - the bar executable
+ 
+# Compute paths
+get_filename_component(RTSP_CLIENT_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(RTSP_CLIENT_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+ 
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET foo AND NOT RtspClient_BINARY_DIR)
+  include("${RTSP_CLIENT_CMAKE_DIR}/RtspClientTargets.cmake")
+endif()
+ 
+# These are IMPORTED targets created by RtspClientTargets.cmake
+#set(RTSP_CLIENT_LIBRARIES foo)
+set(RTSP_CLIENT_EXECUTABLE rtspclient)
