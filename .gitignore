@@ -3,6 +3,7 @@
 *.lo
 *.o
 *.obj
+*.swp
 
 # Precompiled Headers
 *.gch
@@ -31,4 +32,6 @@
 client
 nbproject/private/Default-build.log
 nbproject/private/Default-exec.log
-
+build32
+build64
+rtspclient.dir
